@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/icons/logo.png">
+    <title>Les petits plats</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="../dist/styles.css" rel="stylesheet">
+    <style>
+        .custom-input {
+            height: 70px;
+            width: 960px;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-cover bg-center flex flex-col items-center" style="background-image: url('../assets/banner.jpg'); height: 670px;">
+        <h1 class="self-start pl-16 pt-12">
+            <img src="../assets/icons/logo-complet.svg" alt="texte des bons petits plats">
+        </h1>
+        <h2 class=" pt-44 font-anton text-customYellow text-[44px] font-normal leading-[66.24px] text-center">CHERCHEZ PARMI PLUS DE 1500 RECETTES <br> DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES</h2>
+        <form class="flex pt-4 w-full justify-center">
+            <div class="relative flex items-center pt-2.5">
+                <input class="custom-input  pl-8 pr-16 border border-gray-300 rounded-3xl w-full text-left" type="search" name="search" placeholder="Rechercher une recette, un ingrédient, ..." />
+                <button type="submit" class="absolute right-3  bg-none border-none">
+                    <img src="../assets/icons/loupe.svg" alt="loupe de recherche">
+                </button>
+            </div>
+        </form>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="../data/recipes.js"></script>
+    <script src="../scripts/index.js"></script>
+
+</body>
+</html>
