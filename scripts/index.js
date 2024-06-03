@@ -1,14 +1,14 @@
 console.log(recipes);
 
 class Recipe {
-    constructor(recipe) { 
-        this._id = recipe.id; 
-        console.log(this._id); 
+    constructor(recipe) {
+        this._id = recipe.id;
+        console.log(this._id);
 
-        this._image = `assets/LesPetitsPlats/${recipe.image}`;
+        this._image = `../assets/images/LesPetitsPlats/${recipe.image}`;
         console.log(this._image);
 
-        this._name = recipe.name; 
+        this._name = recipe.name;
         console.log(this._name);
 
         this._appliance = recipe.appliance;
@@ -30,20 +30,47 @@ class Recipe {
         console.log(this._ustensils);
     }
 
-    create
+    updateRecipeCard(card) {
+        card.querySelector('#recipe-image').src = this._image;
+        card.querySelector('#recipe-image').alt = this._name;
+        card.querySelector('#recipe-time').textContent = `${this._time}min`;
+        card.querySelector('#recipe-name').textContent = this._name;
+        card.querySelector('#recipe-description').textContent = this._description;
 
-    displayRecipe() {
-        // Cette méthode peut être vide pour l'instant
+        const ingredientsList = card.querySelector('#recipe-ingredients');
+        ingredientsList.innerHTML = ''; 
+        this._ingredients.forEach(ingredient => {
+            const listItem = document.createElement('li');
+            const ingredientName = document.createElement('span');
+            const quantityAndUnit = document.createElement('span');
+
+            ingredientName.textContent = ingredient.ingredient;
+            ingredientName.classList.add('ingredient-name'); // Ajout de classe pour styliser
+
+            quantityAndUnit.textContent = `${ingredient.quantity ? ingredient.quantity : ''} ${ingredient.unit ? ingredient.unit : ''}`;
+            quantityAndUnit.classList.add('quantity-unit'); // Ajout de classe pour styliser
+
+            listItem.appendChild(ingredientName);
+            listItem.appendChild(quantityAndUnit);
+            
+            ingredientsList.appendChild(listItem);
+        });
     }
 }
 
-// Fonction pour afficher toutes les recettes
 function displayAllRecipes(recipes) {
+    const container = document.getElementById('recipes-container');
+    const baseCard = document.querySelector('.card'); 
+
     recipes.forEach(recipeData => {
         const recipe = new Recipe(recipeData);
-        recipe.displayRecipe(); // Appeler la méthode vide pour éviter les erreurs
+        const cardClone = baseCard.cloneNode(true); 
+        recipe.updateRecipeCard(cardClone);
+        container.appendChild(cardClone);
     });
+
+    baseCard.remove();
 }
 
-// Utilise toutes les recettes du tableau
 displayAllRecipes(recipes);
+

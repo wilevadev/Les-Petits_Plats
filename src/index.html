@@ -4,39 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/icons/logo.png">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Les petits plats</title>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="../dist/styles.css" rel="stylesheet">
-    <style>
-        .custom-input {
-            height: 70px;
-            width: 960px;
-        }
-    </style>
 </head>
 <body>
     <header class="bg-cover bg-center flex flex-col items-center" style="background-image: url('../assets/banner.jpg'); height: 670px;">
         <h1 class="self-start pl-16 pt-12">
             <img src="../assets/icons/logo-complet.svg" alt="texte des bons petits plats">
         </h1>
-        <h2 class=" pt-44 font-anton text-customYellow text-[44px] font-normal leading-[66.24px] text-center">CHERCHEZ PARMI PLUS DE 1500 RECETTES <br> DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES</h2>
+        <h2 class="pt-44 font-anton text-customYellow text-[44px] font-normal leading-[66.24px] text-center">
+            CHERCHEZ PARMI PLUS DE 1500 RECETTES <br> DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES
+        </h2>
         <form class="flex pt-4 w-full justify-center">
             <div class="relative flex items-center pt-2.5">
-                <input class="custom-input  pl-8 pr-16 border border-gray-300 rounded-3xl w-full text-left" type="search" name="search" placeholder="Rechercher une recette, un ingrédient, ..." />
-                <button type="submit" class="absolute right-3  bg-none border-none">
+                <input class="custom-input pl-8 pr-16 border border-gray-300 rounded-3xl w-full text-left" type="search" name="search" placeholder="Rechercher une recette, un ingrédient, ..." />
+                <button type="submit" class="absolute right-3 bg-none border-none">
                     <img src="../assets/icons/loupe.svg" alt="loupe de recherche">
                 </button>
             </div>
         </form>
     </header>
-    <main>
-
+    <main class="main bg-slate-200">
+        <section >
+            <details class="bg-white rounded-lg p-4 w-52 relative">
+                <summary class="flex items-center cursor-pointer list-none">
+                    <span class="font-bold">Ingrédients</span>
+                    <img src="../assets/icons/chevrondown.svg" alt="chevron down" class="ml-auto transition-transform duration-300">
+                </summary>
+                <form class="relative mt-2">
+                    <input class="w-full p-2 border rounded mt-2" type="search" name="search" placeholder="" />
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                        <img src="../assets/icons/loupei.svg" alt="loupe de recherche" class="w-5 h-5">
+                    </button>
+                </form>
+                <div class="mt-2 p-2 rounded">
+                    <div class="flex justify-between items-center">
+                        
+                       
+                    </div>
+                </div>
+            </details>
+        </section>   
+        <div id="recipes-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
+            <div class="card bg-white shadow-md overflow-hidden">
+                <div class="card-header relative">
+                    <img src="" alt="Recipe Name" class="w-full h-64 object-cover" id="recipe-image">
+                    <span class="time-badge absolute top-2 right-2 bg-customYellow text-black text-xs font-bold py-1 px-2 " id="recipe-time">30min</span>
+                </div>
+                <div class="card-body p-4">
+                    <h2 class="font-anton text-base font-normal leading-6 text-left pt-4" id="recipe-name">Recipe Name</h2>
+                    <h3 class="font-manrope text-12 font-bold leading-16.39 tracking-0.09 text-left pt-9 pb-5">RECETTES</h3>
+                    <p class="font-manrope text-sm font-normal leading-5 text-left recipe-description" id="recipe-description">Description of the recipe.</p>
+                    <h3 class="font-manrope text-12 font-bold leading-16.39 tracking-0.09 text-left pt-10 ">INGREDIENTS</h3>
+                    <ul id="recipe-ingredients" >
+                        <!-- Les ingrédients seront insérés ici -->
+                    </ul>
+                </div>
+            </div>
+        </div>
     </main>
-    <footer>
-
-    </footer>
+    <footer></footer>
     <script src="../data/recipes.js"></script>
     <script src="../scripts/index.js"></script>
-
 </body>
 </html>
+
+
+
+
+
+
+
