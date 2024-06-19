@@ -8,68 +8,97 @@
     width: 960px;
 }
 .dropDown[open] summary .chevron {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
- .main{
-  background-color: #ededed;
- }
- .chevron {
-  transition: transform 0.3s ease;
+.main {
+    background-color: #ededed;
+}
+.chevron {
+    transition: transform 0.3s ease;
 }
 .dropDown[open] .chevron {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
-.time-badge{
-  border-radius: 14px;
+.time-badge {
+    border-radius: 14px;
 }
-h3{
-  color:#7A7A7A;
+h3 {
+    color: #7A7A7A;
 }
 #recipe-ingredients {
-  list-style-type: none;
-  padding-left: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-  gap: 10px; /* Espacement entre les éléments */
-  padding-top: 10px;
+    list-style-type: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    gap: 10px; /* Espacement entre les éléments */
+    padding-top: 10px;
 }
 
 #recipe-ingredients li {
-  display: grid;
-  grid-template-rows: auto auto; /* Deux lignes par élément */
-  gap: 4px;
+    display: grid;
+    grid-template-rows: auto auto; /* Deux lignes par élément */
+    gap: 4px;
 }
 
 .card {
-  height: 732px;
-  border-radius: 21px;
+    height: 732px;
+    border-radius: 21px;
 }
 
 #recipe-ingredients .ingredient-name {
-  font-family: Manrope;
-font-size: 14px;
-font-weight: 500;
-line-height: 19.12px;
-text-align: left;
-color: #1B1B1B;
+    font-family: Manrope;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19.12px;
+    text-align: left;
+    color: #1B1B1B;
 }
 
 #recipe-ingredients .quantity-unit {
-  font-family: Manrope;
-font-size: 14px;
-font-weight: 400;
-line-height: 19.12px;
-text-align: left;
-color: #7A7A7A;
-;
-
-}      
- .recipe-description {
-  display: -webkit-box;
-  -webkit-line-clamp: 4; /* Nombre de lignes à afficher */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-height: calc(1.25em * 4); /* Ajustez 1.25em selon votre interligne */
-  line-height: 1.25em; /* Hauteur de ligne, ajustez selon vos besoins */
+    font-family: Manrope;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.12px;
+    text-align: left;
+    color: #7A7A7A;
 }
+
+.recipe-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Nombre de lignes à afficher */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: calc(1.25em * 4); /* Ajustez 1.25em selon votre interligne */
+    line-height: 1.25em; /* Hauteur de ligne, ajustez selon vos besoins */
+}
+.hover-loupe:hover{
+    content: url('../assets/icons/loupeJaune.svg');
+}
+
+
+/* Assurez-vous que le conteneur parent est positionné de manière relative */
+
+
+/* Assurez-vous que le conteneur parent est positionné de manière relative */
+.form {
+    position: relative;
+  
+   
+}
+
+/* Ajustez le bouton pour qu'il se place correctement dans l'input */
+#main-btn {
+    position: absolute;
+    right: 0.5rem;
+    max-width: 700px;
+   
+    color: black;
+    font-size: 0.75rem;
+    font-weight: bold;
+    
+}
+
+
+
+  
